@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <title>Hello, World! — A little moment of magic</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #101323;
+      color: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 18% 18%, #5937a844 0, transparent 36%),
+        radial-gradient(ellipse at 83% 77%, #087e9b38 0, transparent 34%),
+        #101323;
+    }
+
+    .glow {
+      position: fixed;
+      width: 23rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: .32;
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .glow.one { top: -12rem; left: -8rem; background: #9d69ff; }
+    .glow.two { right: -12rem; bottom: -14rem; background: #16c6d9; animation-delay: -5s; }
+
+    main {
+      position: relative;
+      width: min(90vw, 760px);
+      padding: clamp(2.5rem, 8vw, 5.5rem) clamp(1.5rem, 7vw, 5rem);
+      text-align: center;
+      border: 1px solid #ffffff1c;
+      border-radius: 32px;
+      background: linear-gradient(145deg, #ffffff12, #ffffff05);
+      box-shadow: 0 32px 100px #0006, inset 0 1px #ffffff1a;
+      backdrop-filter: blur(20px);
+      animation: arrive .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin: 0 0 1.5rem;
+      color: #c5b5ff;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .sparkle { color: #ffd77a; font-size: 1.05rem; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.5rem, 11vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: .98;
+      background: linear-gradient(105deg, #fff 18%, #d5c8ff 52%, #8ce8ee 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .period { color: #9e83ff; }
+
+    .subtitle {
+      max-width: 31rem;
+      margin: 1.5rem auto 0;
+      color: #b8bbce;
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      line-height: 1.7;
+    }
+
+    .rule {
+      width: 3rem;
+      height: 2px;
+      margin: 2.2rem auto 1.4rem;
+      border: 0;
+      background: linear-gradient(90deg, #a17cff, #55dce4);
+    }
+
+    .footer {
+      color: #85899f;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(18px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes drift {
+      to { transform: translate(4rem, 3rem) scale(1.15); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow one" aria-hidden="true"></div>
+  <div class="glow two" aria-hidden="true"></div>
+  <main>
+    <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span> A little moment of magic</p>
+    <h1>Hello, World<span class="period">.</span></h1>
+    <p class="subtitle">Every great adventure starts with a simple hello. Here’s to the wonderful things you’ll make next.</p>
+    <hr class="rule">
+    <div class="footer">Made with a little curiosity <span aria-hidden="true">✧</span></div>
+  </main>
+</body>
+</html>
