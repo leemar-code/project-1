@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101323">
-  <title>Hello, World! — A little moment of magic</title>
+  <title>Hello, My name is Halimat — A little moment of magic</title>
   <style>
     :root {
       color-scheme: dark;
@@ -20,7 +20,8 @@
       margin: 0;
       display: grid;
       place-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 2rem 0;
       background:
         radial-gradient(ellipse at 18% 18%, #5937a844 0, transparent 36%),
         radial-gradient(ellipse at 83% 77%, #087e9b38 0, transparent 34%),
@@ -104,6 +105,10 @@
       letter-spacing: .04em;
     }
 
+    .site-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin: 2.2rem auto 0; }
+    .site-nav a { padding: .65rem 1rem; border: 1px solid #ffffff20; border-radius: 999px; color: #c9cadd; font-size: .88rem; text-decoration: none; transition: .2s ease; }
+    .site-nav a:hover, .site-nav a:focus-visible { color: #fff; border-color: #a17cff99; background: #a17cff20; }
+
     @keyframes arrive {
       from { opacity: 0; transform: translateY(18px) scale(.98); }
       to { opacity: 1; transform: translateY(0) scale(1); }
@@ -127,6 +132,11 @@
     <p class="subtitle">Every great adventure starts with a simple hello. Here’s to the wonderful things you’ll make next.</p>
     <hr class="rule">
     <div class="footer">Made with a little curiosity <span aria-hidden="true">✧</span></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </main>
 </body>
 </html>
